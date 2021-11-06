@@ -12,9 +12,14 @@ class OAuth2RedirectHandler extends Component {
     };
 
     render() {        
+        // URL parameter로 로그인한 유저의 정보를 전달한다.
         const accessToken = this.getUrlParameter('access_token');
         const refreshToken = this.getUrlParameter('refresh_token');
+        const userId = this.getUrlParameter('user_id');
+        const email = this.getUrlParameter('email');
+        const nickname = this.getUrlParameter('nickname');
 
+        console.log(userId, email, nickname )
         const error = this.getUrlParameter('error');
 
         if(accessToken) {
